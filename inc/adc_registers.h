@@ -16,19 +16,31 @@
 /*** ADC REGISTERS macros ***/
 
 // Peripherals base address.
-#define ADC1        ((ADC_registers_t*) ((uint32_t) 0x50000000))
-#define ADC2        ((ADC_registers_t*) ((uint32_t) 0x50000100))
-#define ADCCR12     ((ADCCR_registers_t*) ((uint32_t) 0x50000300))
+#define ADC1                        ((ADC_registers_t*) ((uint32_t) 0x50000000))
+#define ADC2                        ((ADC_registers_t*) ((uint32_t) 0x50000100))
+#define ADCCR12                     ((ADCCR_registers_t*) ((uint32_t) 0x50000300))
 #if ((STM32G4XX_REGISTERS_MCU_CATEGORY == 3) || (STM32G4XX_REGISTERS_MCU_CATEGORY == 4))
-#define ADC3        ((ADC_registers_t*) ((uint32_t) 0x50000400))
+#define ADC3                        ((ADC_registers_t*) ((uint32_t) 0x50000400))
 #endif
 #if (STM32G4XX_REGISTERS_MCU_CATEGORY == 3)
-#define ADC4        ((ADC_registers_t*) ((uint32_t) 0x50000500))
-#define ADC5        ((ADC_registers_t*) ((uint32_t) 0x50000600))
+#define ADC4                        ((ADC_registers_t*) ((uint32_t) 0x50000500))
+#define ADC5                        ((ADC_registers_t*) ((uint32_t) 0x50000600))
 #endif
 #if ((STM32G4XX_REGISTERS_MCU_CATEGORY == 3) || (STM32G4XX_REGISTERS_MCU_CATEGORY == 4))
-#define ADCCR345    ((ADCCR_registers_t*) ((uint32_t) 0x50000700))
+#define ADCCR345                    ((ADCCR_registers_t*) ((uint32_t) 0x50000700))
 #endif
+// Temperature sensor calibration values.
+#define ADC_TS_VCC_CALIB_MV         ((int32_t) 3000)
+#define ADC_TS_CAL1_ADDR            ((uint16_t*) ((uint32_t) 0x1FFF75A8))
+#define ADC_TS_CAL1                 ((int32_t) (*ADC_TS_CAL1_ADDR))
+#define ADC_TS_CAL1_TEMP            ((int32_t) 30)
+#define ADC_TS_CAL2_ADDR            ((uint16_t*) ((uint32_t) 0x1FFF75CA))
+#define ADC_TS_CAL2                 ((int32_t) (*ADC_TS_CAL2_ADDR))
+#define ADC_TS_CAL2_TEMP            ((int32_t) 130)
+// Internal voltage reference calibration values.
+#define ADC_VREFINT_VCC_CALIB_MV    ((int32_t) 3000)
+#define ADC_VREFINT_CAL_ADDR        ((uint16_t*) ((uint32_t) 0x1FFF75AA))
+#define ADC_VREFINT_CAL             ((int32_t) (*ADC_VREFINT_CAL_ADDR))
 
 /*** ADC REGISTERS structures ***/
 
