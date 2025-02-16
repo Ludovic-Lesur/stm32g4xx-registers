@@ -46,8 +46,13 @@ typedef struct {
     volatile uint32_t DIER;
     volatile uint32_t SR;
     volatile uint32_t EGR;
-    volatile uint32_t CCMR1;
-    volatile uint32_t CCMR2;
+    union {
+        struct {
+            volatile uint32_t CCMR1;
+            volatile uint32_t CCMR2;
+        };
+        volatile uint32_t CCMRx[2];
+    };
     volatile uint32_t CCER;
     volatile uint32_t CNT;
     volatile uint32_t PSC;
