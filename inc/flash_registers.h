@@ -5,12 +5,15 @@
  *      Author: Ludo
  */
 
-#ifndef __FLASH_REGISTERS_H__
-#define __FLASH_REGISTERS_H__
-
 #ifndef STM32G4XX_REGISTERS_DISABLE_FLAGS_FILE
 #include "stm32g4xx_registers_flags.h"
 #endif
+
+#ifndef STM32G4XX_REGISTERS_DISABLE
+
+#ifndef __FLASH_REGISTERS_H__
+#define __FLASH_REGISTERS_H__
+
 #include "types.h"
 
 /*** FLASH REGISTERS macros ***/
@@ -57,3 +60,5 @@ typedef struct {
 } FLASH_registers_t;
 
 #endif /* __FLASH_REGISTERS_H__ */
+
+#endif /* STM32G4XX_REGISTERS_DISABLE */

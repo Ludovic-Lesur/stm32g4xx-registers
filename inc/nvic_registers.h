@@ -5,6 +5,12 @@
  *      Author: Ludo
  */
 
+#ifndef STM32G4XX_REGISTERS_DISABLE_FLAGS_FILE
+#include "stm32g4xx_registers_flags.h"
+#endif
+
+#ifndef STM32G4XX_REGISTERS_DISABLE
+
 #ifndef __NVIC_REGISTERS_H__
 #define __NVIC_REGISTERS_H__
 
@@ -38,3 +44,5 @@ typedef struct {
 } NVIC_registers_t;
 
 #endif /* __NVIC_REGISTERS_H__ */
+
+#endif /* STM32G4XX_REGISTERS_DISABLE */

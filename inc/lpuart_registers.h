@@ -5,6 +5,12 @@
  *      Author: Ludo
  */
 
+#ifndef STM32G4XX_REGISTERS_DISABLE_FLAGS_FILE
+#include "stm32g4xx_registers_flags.h"
+#endif
+
+#ifndef STM32G4XX_REGISTERS_DISABLE
+
 #ifndef __LPUART_REGISTERS_H__
 #define __LPUART_REGISTERS_H__
 
@@ -36,3 +42,5 @@ typedef struct {
 } LPUART_registers_t;
 
 #endif /* __LPUART_REGISTERS_H__ */
+
+#endif /* STM32G4XX_REGISTERS_DISABLE */
